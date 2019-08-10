@@ -3,12 +3,10 @@ Description=Greengrass Core Software
 After=multi-user.target
  
 [Service]
-Type=simple
+Type=oneshot
 ExecStart=/bin/sh -c '/greengrass/ggc/core/greengrassd start'
 ExecStop=/bin/sh -c '/greengrass/ggc/core/greengrassd stop'
-Restart=always
-RestartSec=5
-WatchdogSec=10
+RemainAfterExit=yes
  
 [Install]
 WantedBy=multi-user.target
