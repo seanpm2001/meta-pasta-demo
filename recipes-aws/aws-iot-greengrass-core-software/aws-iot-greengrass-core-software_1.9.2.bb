@@ -15,7 +15,8 @@ LIC_FILES_CHKSUM = "file://ggc/packages/1.9.2/THIRD-PARTY-LICENSES;md5=53b6a4caa
 SRC_URI = " https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/${PV}/greengrass-linux-aarch64-${PV}.tar.gz;name=app-aarch64;subdir=aarch64 \
             https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/${PV}/greengrass-linux-armv7l-${PV}.tar.gz;name=app-arm;subdir=arm \
             https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/${PV}/greengrass-linux-x86-64-${PV}.tar.gz;name=app-x86-64;subdir=x86-64 \
-            https://s3-us-west-2.amazonaws.com/greengrass-release-license/greengrass-license-v1.pdf;name=lic;subdir=${TARGET_ARCH}/greengrass"
+            https://s3-us-west-2.amazonaws.com/greengrass-release-license/greengrass-license-v1.pdf;name=lic;subdir=${TARGET_ARCH}/greengrass \
+            file://config.json;subdir=${TARGET_ARCH}/greengrass"
 
 SRC_URI[app-aarch64.md5sum] = "967cd25ac77e733b0a1b42d83dc96ed1"
 SRC_URI[app-aarch64.sha256sum] = "4cbaf91e5354fe49ded160415394413f068426c2bba13089e6b8a28775990a9c"
@@ -32,6 +33,8 @@ do_install () {
 	install -d ${D}/greengrass
 	cp -R --no-dereference --preserve=mode,links -v ${S}/* ${D}/greengrass
 	chown -R root:root ${D}/greengrass
+
+    install -m 0644 ${S}/config.json ${D}/greengrass/config/
 }
 
 # The binaries are provided by AWS, nothing we can do about it
