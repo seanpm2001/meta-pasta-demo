@@ -31,11 +31,22 @@ CORE_IMAGE_PYTHON_PKGS = " \
     python-flask-jsonpify python3-flask-jsonpify \
 "
 
+# We need those for running AWS Greengrass SDK on the host
+CORE_IMAGE_NODEJS_PKGS = " \
+    nodejs nodejs-npm \
+"
+
+# We need those for running AWS Greengrass SDK on the host
+# CORE_IMAGE_JAVA_PKGS = " \
+#     openjre-8
+# "
+
 CORE_IMAGE_BASE_INSTALL += " \
     docker \
     python3-docker-compose \
     ${CORE_IMAGE_DEV_PKGS} \
     ${CORE_IMAGE_PYTHON_PKGS} \
+    ${CORE_IMAGE_NODEJS_PKGS} \
     ${CORE_IMAGE_AWS_GREENGRASS} \
 "
 
