@@ -9,6 +9,7 @@ PACKAGES = "${PN}"
 SRC_URI = " \
     file://docker-compose.yml \
     file://config.passwd \
+    file://config.disable \
     file://greengrass-credentials.service \
 "
 
@@ -18,6 +19,7 @@ do_install () {
 
     install -d ${D}/greengrass/config/
     install -m 0644 ${WORKDIR}/config.passwd ${D}/greengrass/config
+    install -m 0644 ${WORKDIR}/config.disable ${D}/greengrass/config
 
     install -m 0644 ${WORKDIR}/docker-compose.yml {D}/docker-compose-credentials-setup.yml
 }
