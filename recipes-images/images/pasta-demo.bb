@@ -13,6 +13,13 @@ CORE_IMAGE_DEV_PKGS = " \
     cmake \
 "
 
+# Packages related to video capture and processing
+CORE_IMAGE_VIDEO_PKGS = " \
+    kernel-module-v4l2loopback \
+    v4l2loopbacl-utils \
+    v4l2loopbacl-examples \
+"
+
 # AWS Greengrass packages
 CORE_IMAGE_AWS_GREENGRASS= " \
     aws-iot-greengrass-core-software \
