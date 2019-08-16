@@ -1,0 +1,40 @@
+version: '3.7'
+services:
+  front-end:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    image: leograba/pasta-demo-credentials-setup-front:latest
+    depends_on:
+      - back-end
+    ports:
+      - "8080:80"
+    expose:
+      - "8080"
+    links:
+      - back-end
+    networks:
+      - configsetup
+  back-end:
+    build:
+      context: ./back-end
+      dockerfile: Dockerfile
+    image: leograba/pasta-demo-credentials-setup-back:latest
+    networks:
+      - configsetup
+    ports:
+      - "8000:8000"
+    expose:
+      - "8000"
+    volumes:
+      - type: bind
+        source: /greengrass/config/config.done
+        target: /config.done
+      - type: bind
+        source: /greengrass/config/config.json
+        target: /config.json
+      - type: bind
+        source: /greengrass/config/config.passwd
+        target: /config.passwd
+networks:
+  configsetup:
