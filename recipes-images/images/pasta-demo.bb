@@ -16,8 +16,8 @@ CORE_IMAGE_DEV_PKGS = " \
 # Packages related to video capture and processing
 CORE_IMAGE_VIDEO_PKGS = " \
     kernel-module-v4l2loopback \
-    v4l2loopbacl-utils \
-    v4l2loopbacl-examples \
+    v4l2loopback-utils \
+    v4l2loopback-examples \
 "
 
 # AWS Greengrass packages
@@ -56,6 +56,7 @@ CORE_IMAGE_BASE_INSTALL += " \
     ${CORE_IMAGE_PYTHON_PKGS} \
     ${CORE_IMAGE_NODEJS_PKGS} \
     ${CORE_IMAGE_AWS_GREENGRASS} \
+    ${CORE_IMAGE_VIDEO_PKGS} \
 "
 
 EXTRA_USERS_PARAMS += "\
