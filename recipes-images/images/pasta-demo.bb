@@ -29,6 +29,7 @@ CORE_IMAGE_PYTHON_PKGS = " \
     python-flask python3-flask \
     python-flask-restful python3-flask-restful \
     python-flask-jsonpify python3-flask-jsonpify \
+    python-greengrasssdk python3-greengrasssdk \
 "
 
 # We need those for running AWS Greengrass SDK on the host
