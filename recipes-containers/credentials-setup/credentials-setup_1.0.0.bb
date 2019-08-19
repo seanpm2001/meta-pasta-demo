@@ -21,10 +21,17 @@ do_install () {
     install -m 0644 ${WORKDIR}/config.passwd ${D}/greengrass/config
     install -m 0644 ${WORKDIR}/config.disable ${D}/greengrass/config
 
-    install -m 0644 ${WORKDIR}/docker-compose.yml {D}/docker-compose-credentials-setup.yml
+    install -d ${D}/${sysconfdir}/docker-compose
+    install -m 0644 ${WORKDIR}/docker-compose.yml ${D}/${sysconfdir}/docker-compose/docker-compose-credentials-setup.yml
+
     install -d ${D}/greengrass/certs/
 }
 
 NATIVE_SYSTEMD_SUPPORT = "1"
 SYSTEMD_PACKAGES = "${PN}"
 SYSTEMD_SERVICE_${PN} = "greengrass-credentials.service"
+
+FILES_${PN} = " \
+    /greengrass/config/* \
+    ${sysconfdir}/docker-compose/docker-compose-credentials-setup.yml
+    "
