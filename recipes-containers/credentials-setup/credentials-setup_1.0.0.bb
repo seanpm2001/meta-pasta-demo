@@ -31,7 +31,7 @@ NATIVE_SYSTEMD_SUPPORT = "1"
 SYSTEMD_PACKAGES = "${PN}"
 SYSTEMD_SERVICE_${PN} = "greengrass-credentials.service"
 
-FILES_${PN} = " \
+FILES_${PN} += " \
     /greengrass/config/* \
     ${sysconfdir}/docker-compose/docker-compose-credentials-setup.yml \
 "
