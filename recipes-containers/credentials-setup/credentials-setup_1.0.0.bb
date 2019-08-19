@@ -22,6 +22,7 @@ do_install () {
     install -m 0644 ${WORKDIR}/config.disable ${D}/greengrass/config
 
     install -m 0644 ${WORKDIR}/docker-compose.yml {D}/docker-compose-credentials-setup.yml
+    install -d ${D}/greengrass/certs/
 }
 
 NATIVE_SYSTEMD_SUPPORT = "1"
