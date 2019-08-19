@@ -33,5 +33,5 @@ SYSTEMD_SERVICE_${PN} = "greengrass-credentials.service"
 
 FILES_${PN} = " \
     /greengrass/config/* \
-    ${sysconfdir}/docker-compose/docker-compose-credentials-setup.yml
-    "
+    ${sysconfdir}/docker-compose/docker-compose-credentials-setup.yml \
+"
