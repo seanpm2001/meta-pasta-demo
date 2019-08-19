@@ -24,3 +24,7 @@ do_install () {
 NATIVE_SYSTEMD_SUPPORT = "1"
 SYSTEMD_PACKAGES = "${PN}"
 SYSTEMD_SERVICE_${PN} = "greengrass-software.service"
+
+FILES_${PN} += " \
+    /greengrass/config/* \
+"
