@@ -2,6 +2,8 @@ SUMMARY = "systemd service for Greengrass Credentials Updater"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
+RDEPENDS_${PN} = "aws-iot-greengrass-core-software"
+
 inherit allarch systemd
 
 PACKAGES = "${PN}"
@@ -23,8 +25,6 @@ do_install () {
 
     install -d ${D}/${sysconfdir}/docker-compose
     install -m 0644 ${WORKDIR}/docker-compose.yml ${D}/${sysconfdir}/docker-compose/docker-compose-credentials-setup.yml
-
-    install -d ${D}/greengrass/certs/
 }
 
 NATIVE_SYSTEMD_SUPPORT = "1"
