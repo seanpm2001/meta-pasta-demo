@@ -8,6 +8,7 @@ inherit allarch systemd
 
 PACKAGES = "${PN}"
 
+# You should replace "config.passwd" contents with your own sha256 hash!
 SRC_URI = " \
     file://docker-compose.yml \
     file://config.passwd \
