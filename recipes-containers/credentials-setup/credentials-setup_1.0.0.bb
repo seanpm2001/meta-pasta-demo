@@ -11,7 +11,6 @@ PACKAGES = "${PN}"
 # You should replace "config.passwd" contents with your own sha256 hash!
 SRC_URI = " \
     file://docker-compose.yml \
-    file://config.passwd \
     file://config.disable \
     file://greengrass-credentials.service \
 "
@@ -21,7 +20,6 @@ do_install () {
     install -m 0644 ${WORKDIR}/greengrass-credentials.service ${D}${systemd_unitdir}/system
 
     install -d ${D}/greengrass/config/
-    install -m 0644 ${WORKDIR}/config.passwd ${D}/greengrass/config
     install -m 0644 ${WORKDIR}/config.disable ${D}/greengrass/config
 
     install -d ${D}/${sysconfdir}/docker-compose
