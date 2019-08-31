@@ -28,6 +28,7 @@ CORE_IMAGE_AWS_GREENGRASS= " \
     aws-iot-greengrass-core-software-certificate \
     greengrass-dependency-checker \
     credentials-setup \
+    system-status \
 "
 
 # We need those for running AWS Greengrass SDK on the host
