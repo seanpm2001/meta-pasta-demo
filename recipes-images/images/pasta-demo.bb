@@ -31,6 +31,8 @@ CORE_IMAGE_VIDEO_PKGS = " \
     v4l2loopback-utils \
     v4l2loopback-examples \
     v4l2loopback-init \
+    v4l-utils \
+    media-ctl \
 "
 
 # AWS Greengrass packages
