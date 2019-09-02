@@ -56,6 +56,18 @@ CORE_IMAGE_VIDEO_PKGS = " \
     gstreamer1.0-python \
 "
 
+CORE_IMAGE_ELECTRON_PKGS = " \
+    libxcomposite \
+    nss \
+    libxscrnsaver \
+    libxi \
+    libxtst \
+    libxrandr \
+    at-spi2-atk \
+    cups \
+    gconf \
+"
+
 # AWS Greengrass packages
 CORE_IMAGE_AWS_GREENGRASS= " \
     aws-iot-greengrass-core-software \
@@ -90,6 +102,7 @@ CORE_IMAGE_NODEJS_PKGS = " \
 CORE_IMAGE_BASE_INSTALL += " \
     docker \
     python3-docker-compose \
+    ${CORE_IMAGE_ELECTRON_PKGS} \
     ${CORE_IMAGE_DEV_PKGS} \
     ${CORE_IMAGE_PYTHON_PKGS} \
     ${CORE_IMAGE_NODEJS_PKGS} \
