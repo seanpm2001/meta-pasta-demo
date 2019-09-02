@@ -33,6 +33,9 @@ CORE_IMAGE_VIDEO_PKGS = " \
     v4l2loopback-init \
     v4l-utils \
     media-ctl \
+    \
+    libatomic \
+    python3-pycairo \
 "
 
 # AWS Greengrass packages
