@@ -11,6 +11,18 @@ CORE_IMAGE_DEV_PKGS = " \
     packagegroup-core-sdk \
     git \
     cmake \
+    weston-examples \
+    gtk+3-demo \
+    clutter-1.0-examples \
+    kmscube \
+"
+
+CORE_IMAGE_WAYLAND_WESTON = " \
+    wayland \
+    wayland-protocols \
+    weston \
+    weston-xwayland \
+    weston-init \
 "
 
 # Packages related to video capture and processing
