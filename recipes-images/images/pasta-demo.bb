@@ -115,3 +115,5 @@ usermod -a -G docker torizon; \
 groupadd -r ggc_group; \
 useradd -r -g ggc_group -p '' ggc_user; \
 "
+
+IMAGE_INSTALL_remove = "vim-tiny"
