@@ -36,6 +36,24 @@ CORE_IMAGE_VIDEO_PKGS = " \
     \
     libatomic \
     python3-pycairo \
+    \
+    gstreamer1.0 \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-base \
+    \
+    gstreamer1.0-plugins-base-tcp \
+    gstreamer1.0-plugins-base-pango \
+    gstreamer1.0-plugins-base-videorate \
+    gstreamer1.0-plugins-base-videoscale \
+    gstreamer1.0-plugins-base-videoconvert \
+    gstreamer1.0-plugins-good-jpeg \
+    gstreamer1.0-plugins-good-isomp4 \
+    gstreamer1.0-plugins-good-multifile \
+    gstreamer1.0-plugins-good-video4linux2 \
+    gstreamer1.0-plugins-bad \
+    \
+    gstreamer1.0-python \
 "
 
 # AWS Greengrass packages
