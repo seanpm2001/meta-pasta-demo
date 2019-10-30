@@ -8,7 +8,6 @@ PACKAGES = "${PN}"
 
 SRC_URI = " \
     file://greengrass-software.service \
-    file://config.done \
 "
 
 RDEPENDS_${PN} = " aws-iot-greengrass-core-software "
@@ -16,9 +15,6 @@ RDEPENDS_${PN} = " aws-iot-greengrass-core-software "
 do_install () {
     install -d ${D}${systemd_unitdir}/system/
     install -m 0644 ${WORKDIR}/greengrass-software.service ${D}${systemd_unitdir}/system
-
-    install -d ${D}/greengrass/config/
-    install -m 0644 ${WORKDIR}/config.done ${D}/greengrass/config
 }
 
 NATIVE_SYSTEMD_SUPPORT = "1"
