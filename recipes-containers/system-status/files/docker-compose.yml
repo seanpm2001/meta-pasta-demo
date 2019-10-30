@@ -9,3 +9,5 @@ services:
         source: /sys
         target: /sys
         read_only: true
+    network_mode: "host"
+    privileged: true
