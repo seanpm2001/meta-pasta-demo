@@ -80,3 +80,7 @@ FILES_${PN}-examples += " \
     ${bindir}/ondemandcam \
     ${bindir}/yuv4mpeg_to_v4l2 \
 "
+
+KERNEL_MODULE_AUTOLOAD = "v4l2loopback"
+KERNEL_MODULE_PROBECONF = "v4l2loopback"
+module_conf_v4l2loopback = "options v4l2loopback video_nr=14 exclusive_caps=1 max_buffers=2"
