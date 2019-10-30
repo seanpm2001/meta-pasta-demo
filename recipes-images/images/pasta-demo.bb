@@ -73,6 +73,7 @@ CORE_IMAGE_AWS_GREENGRASS= " \
     aws-iot-greengrass-core-software \
     aws-iot-greengrass-core-software-init \
     aws-iot-greengrass-core-software-certificate \
+    aws-iot-greengrass-core-software-device-credentials \
     greengrass-dependency-checker \
     credentials-setup \
     system-status \
