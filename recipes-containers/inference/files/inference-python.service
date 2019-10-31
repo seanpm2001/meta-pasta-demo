@@ -1,0 +1,11 @@
+[Unit]
+Description=Inference Python application for the AWS Pasta Demo
+After=multi-user.target
+ 
+[Service]
+Type=simple
+Restart=always
+ExecStart=/bin/sh -c 'cd /usr/lib/python3.7/site-packages/inference-python && python3 inference.py'
+ 
+[Install]
+WantedBy=multi-user.target
