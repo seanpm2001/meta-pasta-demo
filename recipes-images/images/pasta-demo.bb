@@ -98,6 +98,17 @@ CORE_IMAGE_NODEJS_PKGS = " \
     nodejs nodejs-npm \
 "
 
+CORE_IMAGE_INFERENCE = " \
+    openblas \
+    mxnet \
+    python3-mxnet \
+    python3-gluoncv \
+    sagemaker-neo-ai-dlr-wheel \
+"
+
+# sagemaker-neo-ai-dlr
+# python3-sagemaker-neo-ai-dlr
+
 # We need those for running AWS Greengrass SDK on the host
 # CORE_IMAGE_JAVA_PKGS = " \
 #     openjre-8
@@ -112,6 +123,8 @@ CORE_IMAGE_BASE_INSTALL += " \
     ${CORE_IMAGE_NODEJS_PKGS} \
     ${CORE_IMAGE_AWS_GREENGRASS} \
     ${CORE_IMAGE_VIDEO_PKGS} \
+    ${CORE_IMAGE_WAYLAND_WESTON} \
+    ${CORE_IMAGE_INFERENCE} \
 "
 
 EXTRA_USERS_PARAMS += "\
