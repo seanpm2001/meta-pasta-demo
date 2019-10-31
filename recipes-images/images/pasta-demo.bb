@@ -76,6 +76,9 @@ CORE_IMAGE_AWS_GREENGRASS= " \
     greengrass-dependency-checker \
     credentials-setup \
     system-status \
+    system-control \
+    local-ui \
+    inference-python \
 "
 
 # We need those for running AWS Greengrass SDK on the host
