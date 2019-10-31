@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  system-control:
+    image: leograba/pasta-demo-system-control:latest-arm64v8
+    ports:
+      - "5002:5002"
+    volumes:
+      - type: bind
+        source: /sys/class/pwm
+        target: /sys/class/pwm
+    network_mode: "host"
+    privileged: true
