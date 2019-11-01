@@ -1,0 +1,4 @@
+[provision]
+provision_path = "/etc/sota/conf.d/credentials.zip" 
+[storage]   
+type = "sqlite" 
