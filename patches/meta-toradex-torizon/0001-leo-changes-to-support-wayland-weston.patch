@@ -1,0 +1,42 @@
+From 8f2053bb29624f43c4eca762696b4de06f5673a9 Mon Sep 17 00:00:00 2001
+From: Your Name <you@example.com>
+Date: Wed, 28 Aug 2019 15:06:41 +0000
+Subject: [PATCH] leo: changes to support wayland weston
+
+---
+ conf/distro/include/torizon-common.inc | 4 ++--
+ conf/distro/include/torizon.inc        | 4 ++--
+ 2 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/conf/distro/include/torizon-common.inc b/conf/distro/include/torizon-common.inc
+index 705ff69..17c81b4 100644
+--- a/conf/distro/include/torizon-common.inc
++++ b/conf/distro/include/torizon-common.inc
+@@ -15,7 +15,7 @@ TCLIBCAPPEND = ""
+ INHERIT += "torizon"
+ 
+ # No need for x11 even for native
+-DISTRO_FEATURES_NATIVE_remove = "x11"
+-DISTRO_FEATURES_NATIVESDK_remove = "x11"
++#DISTRO_FEATURES_NATIVE_remove = "x11"
++#DISTRO_FEATURES_NATIVESDK_remove = "x11"
+ 
+ PREFERRED_PROVIDER_iasl-native = "acpica-native"
+diff --git a/conf/distro/include/torizon.inc b/conf/distro/include/torizon.inc
+index 4c517c5..91c8168 100644
+--- a/conf/distro/include/torizon.inc
++++ b/conf/distro/include/torizon.inc
+@@ -22,8 +22,8 @@ IMAGE_BOOT_FILES_remove_sota = " ${KERNEL_IMAGETYPE}"
+ SOTA_CLIENT_PROV ?= "aktualizr-device-prov"
+ SOTA_DEPLOY_CREDENTIALS ?= "0"
+ 
+-DISTRO_FEATURES_append = " virtualization"
+-DISTRO_FEATURES_remove = "3g alsa irda pcmcia nfc pulseaudio wayland x11 ptest multiarch opengl vulkan"
++DISTRO_FEATURES_append = " virtualization alsa wayland x11 opengl vulkan"
++DISTRO_FEATURES_remove = "3g irda pcmcia nfc pulseaudio ptest multiarch"
+ 
+ # General
+ WKS_FILE_DEPENDS_BOOTLOADERS_remove = "syslinux systemd-boot"
+-- 
+2.17.1
+
