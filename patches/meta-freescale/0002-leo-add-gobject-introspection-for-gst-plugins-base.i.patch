@@ -1,0 +1,38 @@
+From ec2deff9ddef5d30977be5eefedfd6d945442e29 Mon Sep 17 00:00:00 2001
+From: Leonardo Graboski Veiga <leonardo.veiga@toradex.com>
+Date: Tue, 3 Sep 2019 08:32:59 -0300
+Subject: [PATCH 2/2] leo: add gobject-introspection for gst-plugins-base.imx
+
+They are disabled by default due to some compilation error.
+---
+ .../gstreamer/gstreamer1.0-plugins-base_1.14.imx.bb         | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/recipes-multimedia/gstreamer/gstreamer1.0-plugins-base_1.14.imx.bb b/recipes-multimedia/gstreamer/gstreamer1.0-plugins-base_1.14.imx.bb
+index d329dbac..93e56726 100644
+--- a/recipes-multimedia/gstreamer/gstreamer1.0-plugins-base_1.14.imx.bb
++++ b/recipes-multimedia/gstreamer/gstreamer1.0-plugins-base_1.14.imx.bb
+@@ -31,9 +31,9 @@ S = "${WORKDIR}/git"
+ PACKAGECONFIG_append = " pango "
+ 
+ # Disable introspection to fix [GstGL-1.0.gir] Error
+-EXTRA_OECONF_append = " --disable-introspection --disable-opengl --enable-wayland"
++EXTRA_OECONF_append = " --enable-introspection --enable-opengl --enable-wayland"
+ 
+-inherit gettext use-imx-headers
++inherit gettext use-imx-headers gobject-introspection
+ 
+ PACKAGES_DYNAMIC =+ "^libgst.*"
+ 
+@@ -68,7 +68,7 @@ CACHED_CONFIGUREVARS_append_x86 = " ac_cv_header_emmintrin_h=no ac_cv_header_xmm
+ FILES_${MLPREFIX}libgsttag-1.0 += "${datadir}/gst-plugins-base/1.0/license-translations.dict"
+ 
+ do_compile_prepend() {
+-        export GIR_EXTRA_LIBS_PATH="${B}/gst-libs/gst/tag/.libs:${B}/gst-libs/gst/video/.libs:${B}/gst-libs/gst/audio/.libs:${B}/gst-libs/gst/rtp/.libs"
++        export GIR_EXTRA_LIBS_PATH="${B}/gst-libs/gst/tag/.libs:${B}/gst-libs/gst/video/.libs:${B}/gst-libs/gst/audio/.libs:${B}/gst-libs/gst/rtp/.libs:${B}/gst-libs/gst/allocators/.libs"
+ }
+ 
+ FILES_${PN} += "${libdir}/gstreamer-1.0/include"
+-- 
+2.17.1
+
