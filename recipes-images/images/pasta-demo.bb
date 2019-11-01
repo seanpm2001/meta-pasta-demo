@@ -70,11 +70,12 @@ CORE_IMAGE_ELECTRON_PKGS = " \
 "
 
 # AWS Greengrass packages
+# Add "aws-iot-greengrass-core-software-device-credentials" if you want
+# to deploy with device credentials already
 CORE_IMAGE_AWS_GREENGRASS= " \
     aws-iot-greengrass-core-software \
     aws-iot-greengrass-core-software-init \
     aws-iot-greengrass-core-software-certificate \
-    aws-iot-greengrass-core-software-device-credentials \
     greengrass-dependency-checker \
     credentials-setup \
     system-status \
