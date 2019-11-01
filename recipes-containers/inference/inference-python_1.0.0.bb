@@ -8,16 +8,28 @@ PACKAGES = "${PN}"
 
 # You should replace "config.passwd" contents with your own sha256 hash!
 SRC_URI = " \
-    file://inference-source.tar.gz \
+    git://github.com/toradex/aws-nxp-ai-at-the-edge.git;protocol=https;name=source \
+    https://docs.toradex.com/106832-pasta-demo-inference-model.tar.bz2;name=model \
     file://inference-python.service \
 "
 
+SRCREV = "e4b6b41e2ad844a63c28a67f46736df25f5f305e"
+SRC_URI[model.md5sum] = "d36eaa713244c986e8e1f5cd1b44300f"
+SRC_URI[model.sha256sum] = "697d7993b66784be5f2878ef3b147424104187785af88c482d070ffe90a403b9"
+
 do_install () {
+    # Install systemd service
     install -d ${D}${systemd_unitdir}/system/
     install -m 0644 ${WORKDIR}/inference-python.service ${D}${systemd_unitdir}/system
 
+    # Install inference source-code
     install -d ${D}${PYTHON_SITEPACKAGES_DIR}/${PN}
-    cp -a ${WORKDIR}/inference/* ${D}${PYTHON_SITEPACKAGES_DIR}/${PN}/
+    cp -a ${WORKDIR}/git/inference/* ${D}${PYTHON_SITEPACKAGES_DIR}/${PN}/
+
+    # Install inference model
+    install -d ${D}${PYTHON_SITEPACKAGES_DIR}/${PN}/model
+    cp -a ${WORKDIR}/pasta-demo-inference-model/* ${D}${PYTHON_SITEPACKAGES_DIR}/${PN}/model/
+
     chown -R 0:0 ${D}${PYTHON_SITEPACKAGES_DIR}/${PN}
 }
 
