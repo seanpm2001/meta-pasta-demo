@@ -1,0 +1,7 @@
+# Greengrass Core device credentials
+recipes-aws/aws-iot-greengrass-core-software/files/core-device-secret.tar.gz
+recipes-aws/aws-iot-greengrass-core-software/files/*.tar.gz
+
+# Aktualizr OTA credentials
+recipes-sota/aktualizr/files/credentials.zip
+recipes-sota/aktualizr/files/*.zip
