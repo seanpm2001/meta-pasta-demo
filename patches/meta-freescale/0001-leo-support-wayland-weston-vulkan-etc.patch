@@ -1,0 +1,30 @@
+From 7511d542fa851fa6bbd9ef61d29cb8cf036b98b3 Mon Sep 17 00:00:00 2001
+From: Your Name <you@example.com>
+Date: Wed, 28 Aug 2019 15:08:27 +0000
+Subject: [PATCH 1/2] leo: support wayland weston, vulkan, etc
+
+---
+ recipes-graphics/imx-gpu-viv/imx-gpu-viv-6.inc | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/recipes-graphics/imx-gpu-viv/imx-gpu-viv-6.inc b/recipes-graphics/imx-gpu-viv/imx-gpu-viv-6.inc
+index b33780d2..763f9965 100644
+--- a/recipes-graphics/imx-gpu-viv/imx-gpu-viv-6.inc
++++ b/recipes-graphics/imx-gpu-viv/imx-gpu-viv-6.inc
+@@ -32,6 +32,7 @@ EXTRA_PROVIDES_append_imxgpu3d = " \
+ "
+ EXTRA_PROVIDES_append_mx8 = " \
+     virtual/libgbm \
++    vulkan \
+ "
+ EXTRA_PROVIDES_append_mx8qm = " \
+     virtual/libopenvx \
+@@ -367,4 +368,4 @@ FILES_imx-gpu-viv-tools = "${bindir}/gmem_info"
+ FILES_imx-gpu-viv-demos = "/opt"
+ INSANE_SKIP_imx-gpu-viv-demos += "rpaths dev-deps"
+ 
+-# COMPATIBLE_MACHINE = "(mx6q|mx6dl|mx6sx|mx6sl|mx8)"
++COMPATIBLE_MACHINE = "(mx6q|mx6dl|mx6sx|mx6sl|mx8|apalis-imx8)"
+-- 
+2.17.1
+
