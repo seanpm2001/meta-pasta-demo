@@ -6,6 +6,8 @@ of TorizonCore with Docker runtime."
 require recipes-images/images/torizon-core-container.inc
 
 # Ideally we remove those when the project is finished
+# For now it's kept as it may help people evaluating things and also
+# the Apalis iMX8 has plenty of storage
 CORE_IMAGE_DEV_PKGS = " \
     packagegroup-core-buildessential \
     packagegroup-core-sdk \
@@ -109,13 +111,15 @@ CORE_IMAGE_INFERENCE = " \
     sagemaker-neo-ai-dlr-wheel \
 "
 
+# Alternative to the Python Wheel provided by Sagemaker is to build from source
 # sagemaker-neo-ai-dlr
 # python3-sagemaker-neo-ai-dlr
 
-# We need those for running AWS Greengrass SDK on the host
-# CORE_IMAGE_JAVA_PKGS = " \
-#     openjre-8
-# "
+# Add "aktualizr-pasta-demo" if you want OTA
+CORE_IMAGE_OTA = ""
+#CORE_IMAGE_OTA = " \
+#    aktualizr-pasta-demo
+#"
 
 CORE_IMAGE_BASE_INSTALL += " \
     docker \
@@ -128,6 +132,7 @@ CORE_IMAGE_BASE_INSTALL += " \
     ${CORE_IMAGE_VIDEO_PKGS} \
     ${CORE_IMAGE_WAYLAND_WESTON} \
     ${CORE_IMAGE_INFERENCE} \
+    ${CORE_IMAGE_OTA} \
 "
 
 EXTRA_USERS_PARAMS += "\
