@@ -6,7 +6,7 @@ then
     # patches
     cd ../meta-freescale
     patch -p1 < ../meta-pasta-demo/patches/meta-freescale/0001-leo-support-wayland-weston-vulkan-etc.patch
-│   patch -p1 < ../meta-pasta-demo/patches/meta-freescale/0002-leo-add-gobject-introspection-for-gst-plugins-base.i.patch
+    patch -p1 < ../meta-pasta-demo/patches/meta-freescale/0002-leo-add-gobject-introspection-for-gst-plugins-base.i.patch
     cd ../meta-toradex-nxp
     patch -p1 < ../meta-pasta-demo/patches/meta-toradex-nxp/0001-leo-support-wayland-weston.patch
     cd ../meta-toradex-torizon
