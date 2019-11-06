@@ -13,9 +13,9 @@ SRC_URI = " \
     file://inference-python.service \
 "
 
-SRCREV = "e4b6b41e2ad844a63c28a67f46736df25f5f305e"
-SRC_URI[model.md5sum] = "d36eaa713244c986e8e1f5cd1b44300f"
-SRC_URI[model.sha256sum] = "697d7993b66784be5f2878ef3b147424104187785af88c482d070ffe90a403b9"
+SRCREV = "b79fdada92c685ec2c08d9255496d87944c17b2d"
+SRC_URI[model.md5sum] = "53c185197f31d0ab48642b46834b836c"
+SRC_URI[model.sha256sum] = "51b33977e858f0b6ff0c4ba7167ff8a70c885d31e34a80e71cdec10d4f9557cb"
 
 do_install () {
     # Install systemd service
