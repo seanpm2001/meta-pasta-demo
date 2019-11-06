@@ -1,7 +1,7 @@
-From 8f2053bb29624f43c4eca762696b4de06f5673a9 Mon Sep 17 00:00:00 2001
-From: Your Name <you@example.com>
-Date: Wed, 28 Aug 2019 15:06:41 +0000
-Subject: [PATCH] leo: changes to support wayland weston
+From b9a7007e14dfd8646127ec0e77907f7dc769599d Mon Sep 17 00:00:00 2001
+From: Leonardo Graboski Veiga <leonardo.veiga@toradex.com>
+Date: Wed, 6 Nov 2019 13:29:02 -0300
+Subject: [PATCH] pasta-demo: changes to support wayland weston
 
 ---
  conf/distro/include/torizon-common.inc | 4 ++--
@@ -9,10 +9,10 @@ Subject: [PATCH] leo: changes to support wayland weston
  2 files changed, 4 insertions(+), 4 deletions(-)
 
 diff --git a/conf/distro/include/torizon-common.inc b/conf/distro/include/torizon-common.inc
-index 705ff69..17c81b4 100644
+index e16cc6b..9affe80 100644
 --- a/conf/distro/include/torizon-common.inc
 +++ b/conf/distro/include/torizon-common.inc
-@@ -15,7 +15,7 @@ TCLIBCAPPEND = ""
+@@ -17,8 +17,8 @@ TCLIBCAPPEND = ""
  INHERIT += "torizon"
  
  # No need for x11 even for native
@@ -22,11 +22,12 @@ index 705ff69..17c81b4 100644
 +#DISTRO_FEATURES_NATIVESDK_remove = "x11"
  
  PREFERRED_PROVIDER_iasl-native = "acpica-native"
+ 
 diff --git a/conf/distro/include/torizon.inc b/conf/distro/include/torizon.inc
-index 4c517c5..91c8168 100644
+index 7a18f70..608c3f0 100644
 --- a/conf/distro/include/torizon.inc
 +++ b/conf/distro/include/torizon.inc
-@@ -22,8 +22,8 @@ IMAGE_BOOT_FILES_remove_sota = " ${KERNEL_IMAGETYPE}"
+@@ -34,8 +34,8 @@ IMAGE_BOOT_FILES = ""
  SOTA_CLIENT_PROV ?= "aktualizr-device-prov"
  SOTA_DEPLOY_CREDENTIALS ?= "0"
  

@@ -1,7 +1,7 @@
-From 810c77190a4c74bc96427176b90e38f6b9ccc0a5 Mon Sep 17 00:00:00 2001
+From 2d732c7b6d3925a5851ad471cab9bf7cac640847 Mon Sep 17 00:00:00 2001
 From: Leonardo Graboski Veiga <leonardo.veiga@toradex.com>
-Date: Tue, 3 Sep 2019 20:35:16 -0300
-Subject: [PATCH] leo: use Gstreamer 1.14.4 bindings
+Date: Wed, 6 Nov 2019 13:30:17 -0300
+Subject: [PATCH] pasta-demo: use Gstreamer 1.14.4 bindings
 
 ---
  ...amer1.0-python_1.16.0.bb => gstreamer1.0-python_1.14.4.bb} | 4 ++--

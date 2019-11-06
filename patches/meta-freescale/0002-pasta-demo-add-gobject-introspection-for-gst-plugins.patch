@@ -1,9 +1,10 @@
-From ec2deff9ddef5d30977be5eefedfd6d945442e29 Mon Sep 17 00:00:00 2001
+From 5a42d04443c64abd4c0ebba6b587aff7a8979cea Mon Sep 17 00:00:00 2001
 From: Leonardo Graboski Veiga <leonardo.veiga@toradex.com>
-Date: Tue, 3 Sep 2019 08:32:59 -0300
-Subject: [PATCH 2/2] leo: add gobject-introspection for gst-plugins-base.imx
+Date: Wed, 6 Nov 2019 09:29:52 -0300
+Subject: [PATCH 2/2] pasta-demo: add gobject-introspection for
+ gst-plugins-base.imx
 
-They are disabled by default due to some compilation error.
+They are disabled by default, but required for our application.
 ---
  .../gstreamer/gstreamer1.0-plugins-base_1.14.imx.bb         | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
