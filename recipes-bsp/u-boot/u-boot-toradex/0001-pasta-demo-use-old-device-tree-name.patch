@@ -1,0 +1,27 @@
+From 5343652ef8c57e2c87977b17b5e5e477eb0ffac9 Mon Sep 17 00:00:00 2001
+From: Leonardo Graboski Veiga <leonardo.veiga@toradex.com>
+Date: Wed, 6 Nov 2019 10:59:13 -0300
+Subject: [PATCH] pasta-demo: use old device-tree name
+
+This is required to build the Linux device-tree from Embedded Linux BSP
+3.0b2, with commit hash e43e3a26e1b74af86ad80dfdfc3d7b6672d9a676.
+---
+ include/configs/apalis-imx8.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/configs/apalis-imx8.h b/include/configs/apalis-imx8.h
+index 9d926481ce..674c91ffb6 100644
+--- a/include/configs/apalis-imx8.h
++++ b/include/configs/apalis-imx8.h
+@@ -100,7 +100,7 @@
+ 
+ #define CONFIG_SKIP_RESOURCE_CHECING
+ 
+-#define FDT_FILE			"fsl-imx8qm-apalis-eval.dtb"
++#define FDT_FILE			"fsl-imx8qm-apalis.dtb"
+ 
+ /* Initial environment variables */
+ #define CONFIG_EXTRA_ENV_SETTINGS \
+-- 
+2.17.1
+
