@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   front-end:
-    image: leograba/pasta-demo-credentials-setup-front:latest-arm32v7
+    image: leograba/pasta-demo-credentials-setup-front:latest-arm64v8
     depends_on:
       - back-end
     ports:
@@ -11,10 +11,13 @@ services:
     networks:
       - configsetup
   back-end:
-    image: leograba/pasta-demo-credentials-setup-back:latest-arm32v7
+    image: leograba/pasta-demo-credentials-setup-back:latest-arm64v8
     networks:
       - configsetup
     volumes:
+      - type: bind
+        source: /etc/greengrass/
+        target: /etc/greengrass/
       - type: bind
         source: /greengrass/config/
         target: /greengrass/config/

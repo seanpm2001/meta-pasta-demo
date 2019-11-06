@@ -20,15 +20,6 @@ do_install () {
 
     install -d ${D}/greengrass/config/
     install -m 0644 ${S}/config/config.json ${D}/greengrass/config/
-
-    # Prevent the device credentials from being brought up
-    # and enable the greengrass-software
-    printf "done" > ${S}/config.done
-    printf "done" > ${S}/config.disable
-    chown 0:0 ${S}/config.done
-    chown 0:0 ${S}/config.disable
-    install -m 0644 ${S}/config.done ${D}/greengrass/config
-    install -m 0644 ${S}/config.disable ${D}/greengrass/config
 }
 
 FILES_${PN} += "/greengrass/certs/* /greengrass/config/*"

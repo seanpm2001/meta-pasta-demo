@@ -1,7 +1,7 @@
 [Unit]
 Description=Greengrass Core Software
 After=multi-user.target
-ConditionFileNotEmpty=/greengrass/config/config.done
+ConditionFileNotEmpty=/greengrass/config/config.json
  
 [Service]
 Type=oneshot
