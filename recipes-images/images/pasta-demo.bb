@@ -97,6 +97,8 @@ CORE_IMAGE_PYTHON_PKGS = " \
     python-imaging \
     python3-imageio \
     python3-flask-cors \
+    python3-jsonschema \
+    python3-importlib-metadata \
 "
 
 # We need those for running AWS Greengrass SDK on the host
