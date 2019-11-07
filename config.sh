@@ -20,10 +20,16 @@ then
     cp conf/local.conf.example ../../build-torizon/conf/local.conf
     echo 'Remember to accept NXP EULA by un-commeting ACCEPT_FSL_EULA="1" from conf/local.conf'
 
+    # extra layers
+    cd ../ # go to layers directory
+    git clone https://github.com/bachp/meta-homeassistant.git
+
     # bblayers.conf
-    sed -i '$d' ../../build-torizon/conf/bblayers.conf
-    echo '  ${OEROOT}/layers/meta-pasta-demo \' >> ../../build-torizon/conf/bblayers.conf
-    echo '"' >> ../../build-torizon/conf/bblayers.conf
+    cd ../build-torizon
+    sed -i '$d' ./conf/bblayers.conf
+    echo '  ${OEROOT}/layers/meta-pasta-demo \' >> ./conf/bblayers.conf
+    echo '  ${OEROOT}/layers/meta-homeassistant \' >> ./conf/bblayers.conf
+    echo '"' >> ./conf/bblayers.conf
 else
     echo "Please run this script from the meta-pasta-demo root directory!"
 fi
