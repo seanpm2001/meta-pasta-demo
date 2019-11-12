@@ -13,7 +13,7 @@ SRC_URI = " \
     file://inference-python.service \
 "
 
-SRCREV = "b79fdada92c685ec2c08d9255496d87944c17b2d"
+SRCREV = "124fc1a838f29ebbf71f41559ec30771d8b614f4"
 SRC_URI[model.md5sum] = "53c185197f31d0ab48642b46834b836c"
 SRC_URI[model.sha256sum] = "51b33977e858f0b6ff0c4ba7167ff8a70c885d31e34a80e71cdec10d4f9557cb"
 
