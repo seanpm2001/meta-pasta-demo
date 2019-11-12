@@ -5,8 +5,8 @@ After=multi-user.target docker.socket
 [Service]
 Type=oneshot
 # Try to automatically update the containers on startup
-ExecStartPre=-/bin/sh -c 'docker pull matheuscastello/pasta-demo-local-ui:latest-arm64v8'
-ExecStart=/bin/sh -c 'docker run --rm -d --name local-ui -v /sys:/sys -v /dev:/dev -v /tmp:/tmp --network host --privileged matheuscastello/pasta-demo-local-ui:latest-arm64v8'
+ExecStartPre=-/bin/sh -c 'docker pull torizonextras/pasta-demo-local-ui:latest-arm64v8'
+ExecStart=/bin/sh -c 'docker run --rm -d --name local-ui -v /sys:/sys -v /dev:/dev -v /tmp:/tmp --network host --privileged torizonextras/pasta-demo-local-ui:latest-arm64v8'
 ExecStop=/bin/sh -c 'docker stop local-ui'
 RemainAfterExit=yes
  

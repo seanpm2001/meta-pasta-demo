@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   system-info:
-    image: leograba/pasta-demo-system-info:latest-arm64v8
+    image: torizonextras/pasta-demo-system-info:latest-arm64v8
     ports:
       - "5001:5001"
     volumes:

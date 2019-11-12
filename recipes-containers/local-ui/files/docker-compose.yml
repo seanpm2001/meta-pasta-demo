@@ -3,7 +3,7 @@ services:
   local-ui:
     depends_on:
       - inference
-    image: matheuscastello/pasta-demo-local-ui:latest-arm64v8
+    image: torizonextras/pasta-demo-local-ui:latest-arm64v8
     volumes:
       - type: bind
         source: /sys
@@ -19,7 +19,7 @@ services:
     devices:
       - "/dev/video14:/dev/video0"
   inference:
-    image: matheuscastello/inference:latest-arm64v8
+    image: torizonextras/inference:latest-arm64v8
     volumes:
       - type: bind
         source: /sys
