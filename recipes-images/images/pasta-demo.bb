@@ -1,4 +1,4 @@
-SUMMARY = "Image for the collaborative Pasta Demo with AWS and NXP"
+SUMMARY = "AWS and NXP AI at the Edge Pasta Detection Demo"
 DESCRIPTION = "Collaborative demo with Amazon and NXP to plug the pasta demo \
 to AWS services such as AWS IoT Greengrass and AWS SageMaker Neo. Built on top \
 of TorizonCore with Docker runtime."
