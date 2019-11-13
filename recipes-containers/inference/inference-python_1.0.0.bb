@@ -9,7 +9,7 @@ PACKAGES = "${PN}"
 # You should replace "config.passwd" contents with your own sha256 hash!
 SRC_URI = " \
     git://github.com/toradex/aws-nxp-ai-at-the-edge.git;protocol=https;name=source \
-    https://docs.toradex.com/106832-pasta-demo-inference-model.tar.bz2;name=model \
+    https://docs.toradex.com/106832-pasta-demo-inference-model.tar.bz2?v=2;name=model \
     file://inference-python.service \
 "
 
