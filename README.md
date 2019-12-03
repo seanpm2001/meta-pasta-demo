@@ -3,7 +3,7 @@
 This is the Yocto layer for the [Toradex](https://www.toradex.com/) AWS AI at
 the Edge Demo Image, to plug a Toradex Computer on Module using
 the embedded Linux [Torizon](https://www.toradex.com/operating-systems/torizon)
-platform to AWS services such as AWS IoT Greengrass and AWS SageMaker Neo.
+platform to AWS services such as AWS IoT Greengrass and Amazon SageMaker Neo.
 
 # How to Use #
 
