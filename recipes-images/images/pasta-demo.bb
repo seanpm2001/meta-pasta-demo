@@ -81,7 +81,7 @@ CORE_IMAGE_AWS_GREENGRASS= " \
     system-status \
     system-control \
     local-ui \
-    inference-python \
+    inference \
 "
 
 # We need those for running AWS Greengrass SDK on the host
@@ -106,15 +106,6 @@ CORE_IMAGE_PYTHON_PKGS = " \
 CORE_IMAGE_NODEJS_PKGS = " \
     nodejs nodejs-npm \
 "
-
-CORE_IMAGE_INFERENCE = " \
-    openblas \
-    mxnet \
-    python3-mxnet \
-    python3-gluoncv \
-    sagemaker-neo-ai-dlr-wheel \
-"
-
 # Alternative to the Python Wheel provided by Sagemaker is to build from source
 # sagemaker-neo-ai-dlr
 # python3-sagemaker-neo-ai-dlr
@@ -135,7 +126,6 @@ CORE_IMAGE_BASE_INSTALL += " \
     ${CORE_IMAGE_AWS_GREENGRASS} \
     ${CORE_IMAGE_VIDEO_PKGS} \
     ${CORE_IMAGE_WAYLAND_WESTON} \
-    ${CORE_IMAGE_INFERENCE} \
     ${CORE_IMAGE_OTA} \
 "
 

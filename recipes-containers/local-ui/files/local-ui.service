@@ -1,7 +1,8 @@
 [Unit]
 Description=Local UI docker image for the AWS Pasta Demo
 After=multi-user.target docker.socket
- 
+Requires=inference.service
+
 [Service]
 Type=oneshot
 # Try to automatically update the containers on startup
@@ -9,6 +10,6 @@ ExecStartPre=-/bin/sh -c 'docker pull torizonextras/pasta-demo-local-ui:latest-a
 ExecStart=/bin/sh -c 'docker run --rm -d --name local-ui -v /sys:/sys -v /dev:/dev -v /tmp:/tmp --network host --privileged torizonextras/pasta-demo-local-ui:latest-arm64v8'
 ExecStop=/bin/sh -c 'docker stop local-ui'
 RemainAfterExit=yes
- 
+
 [Install]
 WantedBy=multi-user.target
