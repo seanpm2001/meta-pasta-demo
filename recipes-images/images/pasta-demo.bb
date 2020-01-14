@@ -81,7 +81,6 @@ CORE_IMAGE_AWS_GREENGRASS= " \
     system-status \
     system-control \
     local-ui \
-    inference \
 "
 
 # We need those for running AWS Greengrass SDK on the host
