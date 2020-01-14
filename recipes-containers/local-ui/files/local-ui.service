@@ -6,7 +6,7 @@ After=multi-user.target docker.socket
 Type=oneshot
 # Try to automatically update the containers on startup
 ExecStartPre=-/bin/sh -c 'docker pull torizonextras/pasta-demo-inference'
-ExecStartPre=-/bin/sh -c 'docker run --rm -d --name=inference -v /dev/galcore:/dev/galcore -v /run/udev/:/run/udev/ -v /sys:/sys -v /dev:/dev -v /tmp:/tmp --network host --privileged torizonextras/pasta-demo-inference'
+ExecStartPre=-/bin/sh -c 'docker run --rm -d -p 5003:5003 --name=inference -v /dev/galcore:/dev/galcore -v /run/udev/:/run/udev/ -v /sys:/sys -v /dev:/dev -v /tmp:/tmp --network host --privileged torizonextras/pasta-demo-inference'
 ExecStartPre=-/bin/sh -c 'sleep 10'
 ExecStartPre=-/bin/sh -c 'docker pull torizonextras/pasta-demo-local-ui:latest-arm64v8'
 ExecStart=/bin/sh -c 'docker run --rm -d --name local-ui -v /sys:/sys -v /dev:/dev -v /tmp:/tmp --network host --privileged torizonextras/pasta-demo-local-ui:latest-arm64v8'
