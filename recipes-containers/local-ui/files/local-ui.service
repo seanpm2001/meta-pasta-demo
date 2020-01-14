@@ -1,7 +1,6 @@
 [Unit]
 Description=Local UI docker image for the AWS Pasta Demo
 After=multi-user.target docker.socket
-Requires=inference.service
 
 [Service]
 Type=oneshot
