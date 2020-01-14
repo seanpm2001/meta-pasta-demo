@@ -95,7 +95,6 @@ CORE_IMAGE_PYTHON_PKGS = " \
     python3-pillow \
     python-imaging \
     python3-imageio \
-    python3-flask-cors \
     python3-jsonschema \
     python3-importlib-metadata \
     python3-boto3 \
